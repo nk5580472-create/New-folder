@@ -106,7 +106,43 @@
                 transform: translateY(-100vh);
                 opacity: 0;
             }
-        }
+        }/* 1. Sabse pehle image ko perfect circle banane ke liye */
+img {
+    width: 250px;           /* Laptop par size */
+    height: 250px;          /* Height aur Width hamesha same rakhein */
+    border-radius: 50%;     /* Photo ko gol karne ke liye */
+    object-fit: cover;      /* Sabse zaroori: Isse photo stretch nahi hogi */
+    object-position: center; /* Photo ka beech ka hissa dikhega */
+    border: 5px solid #fff; /* White border (Optional, achha dikhta hai) */
+    box-shadow: 0 0 20px rgba(0,0,0,0.2); /* Thodi shadow taaki photo ubhar kar dikhe */
+}
+
+/* 2. Ab har device (Mobile/Tablet) ke liye automatic size badalne ke liye */
+@media (max-width: 768px) {
+    /* Tablet ke liye */
+    img {
+        width: 200px;
+        height: 200px;
+    }
+    h1 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Chote Mobile ke liye */
+    img {
+        width: 160px;       /* Mobile par photo thodi choti ho jayegi */
+        height: 160px;
+    }
+    h1 {
+        font-size: 35px;    /* Mobile par naam ka size chota ho jayega */
+    }
+    body {
+        padding: 15px;      /* Side mein thodi jagah chodne ke liye */
+    }
+}
+
     </style>
 </head>
 
